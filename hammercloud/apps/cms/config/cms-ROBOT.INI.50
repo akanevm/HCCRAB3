@@ -18,7 +18,7 @@
 #=======================================================================
 
 [Configuration]
-RUNTIME_PATH = GangaCMS:GangaRobot
+RUNTIME_PATH = GangaCRAB3:GangaRobot
 gangadir = /data/hc/apps/cms/gangadir/robot/
 
 [defaults_GridProxy]
@@ -35,32 +35,35 @@ SCRIPTS_PATH = GangaRobot/scripts
 [LCG]
 VirtualOrganisation = cms
 
-[CMSSW]
-CRAB_VERSION = CRAB_2_8_5_patch2
-location = /data/hc/external/cms/crab
+#[CMSSW]
+#CRAB_VERSION = CRAB_2_8_5_patch2
+#location = /data/hc/external/cms/crab
 
-[USER_CFG]
-tasktype = hammercloud
+[CRAB_CFG]
+server_name = cmsweb-testbed.cern.ch
+apiresource = /crabserver/preprod/
 
-[Metrics]
-location = /data/hc/apps/cms/config/metrics.ini_hc
+#[USER_CFG]
+#tasktype = hammercloud
+
+#[Metrics]
+#location = /data/hc/apps/cms/config/metrics.ini_hc
 
 #=======================================================================
 
 [Logging]
-GangaCMS = INFO
-GangaRobot = INFO
-Ganga.GPI = INFO
+GangaCRAB3 = DEBUG
+GangaRobot = DEBUG
+Ganga.GPI = DEBUG
 run_test = DEBUG
-_logfile = /data/hc/apps/cms/logs/ganga.log
+_logfile = /tmp/gangatest1.log
 _logfile_size = 10000000
 _format = VERBOSE
 
 [PollThread]
 # Enable monitoring for robot script
 autostart = True
-default_backend_poll_rate = 300
-
+default_backend_poll_rate = 30
 #=======================================================================
 [Robot]
 # list of action names and sleep periods (seconds)
